@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "planning_conges",
+  "info": {
+    "singularName": "planning-conge",
+    "pluralName": "planning-conges",
+    "displayName": "planning-conge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "exercices": {
+      "type": "string"
+    },
+    "jours_prevus": {
+      "type": "integer"
+    },
+    "agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agent.agent",
+      "inversedBy": "planning_conges"
+    }
+  }
+}

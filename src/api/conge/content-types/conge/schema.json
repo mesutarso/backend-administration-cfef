@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conges",
+  "info": {
+    "singularName": "conge",
+    "pluralName": "conges",
+    "displayName": "conge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date_debut": {
+      "type": "date"
+    },
+    "date_fin": {
+      "type": "date"
+    },
+    "statut": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "refused",
+        "validated"
+      ]
+    },
+    "agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agent.agent",
+      "inversedBy": "conges"
+    }
+  }
+}

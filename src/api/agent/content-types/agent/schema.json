@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agents",
+  "info": {
+    "singularName": "agent",
+    "pluralName": "agents",
+    "displayName": "agent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "noms": {
+      "type": "string"
+    },
+    "fonction": {
+      "type": "string"
+    },
+    "date_signature": {
+      "type": "string"
+    },
+    "date_fin": {
+      "type": "string"
+    },
+    "reference_contrat": {
+      "type": "string"
+    },
+    "honoraire": {
+      "type": "string"
+    },
+    "observation": {
+      "type": "string"
+    },
+    "conges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conge.conge",
+      "mappedBy": "agent"
+    },
+    "type_contrat": {
+      "type": "string"
+    },
+    "planning_conges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::planning-conge.planning-conge",
+      "mappedBy": "agent"
+    }
+  }
+}

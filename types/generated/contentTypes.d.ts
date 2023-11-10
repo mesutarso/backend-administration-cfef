@@ -711,6 +711,7 @@ export interface ApiAgentAgent extends Schema.CollectionType {
     email: Attribute.Email;
     date_naissance: Attribute.Date;
     lieu_naissance: Attribute.String;
+    Nationalite: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

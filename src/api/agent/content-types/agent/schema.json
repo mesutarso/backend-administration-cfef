@@ -59,6 +59,9 @@
     },
     "lieu_naissance": {
       "type": "string"
+    },
+    "Nationalite": {
+      "type": "string"
     }
   }
 }

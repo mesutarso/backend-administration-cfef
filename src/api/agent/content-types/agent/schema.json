@@ -18,12 +18,6 @@
     "fonction": {
       "type": "string"
     },
-    "date_signature": {
-      "type": "string"
-    },
-    "date_fin": {
-      "type": "string"
-    },
     "reference_contrat": {
       "type": "string"
     },
@@ -47,6 +41,24 @@
       "relation": "oneToMany",
       "target": "api::planning-conge.planning-conge",
       "mappedBy": "agent"
+    },
+    "date_signature": {
+      "type": "date"
+    },
+    "date_fin": {
+      "type": "date"
+    },
+    "Adresse": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "date_naissance": {
+      "type": "date"
+    },
+    "lieu_naissance": {
+      "type": "string"
     }
   }
 }

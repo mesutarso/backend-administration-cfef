@@ -691,8 +691,6 @@ export interface ApiAgentAgent extends Schema.CollectionType {
   attributes: {
     noms: Attribute.String;
     fonction: Attribute.String;
-    date_signature: Attribute.String;
-    date_fin: Attribute.String;
     reference_contrat: Attribute.String;
     honoraire: Attribute.String;
     observation: Attribute.String;
@@ -707,6 +705,12 @@ export interface ApiAgentAgent extends Schema.CollectionType {
       'oneToMany',
       'api::planning-conge.planning-conge'
     >;
+    date_signature: Attribute.Date;
+    date_fin: Attribute.Date;
+    Adresse: Attribute.Text;
+    email: Attribute.Email;
+    date_naissance: Attribute.Date;
+    lieu_naissance: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

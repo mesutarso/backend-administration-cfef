@@ -22,7 +22,7 @@
     "strapi-plugin-transformer": "^3.1.2"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Mechack Tambwe"
   },
   "strapi": {
     "uuid": "07a3f014-00aa-41ce-8ae0-3b86fbc9ce52"

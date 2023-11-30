@@ -68,6 +68,19 @@
       "relation": "manyToOne",
       "target": "api::departement.departement",
       "inversedBy": "agents"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "sexe": {
+      "type": "enumeration",
+      "enum": [
+        "masculin",
+        "feminin"
+      ]
+    },
+    "etat_civil": {
+      "type": "string"
     }
   }
 }

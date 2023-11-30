@@ -717,6 +717,9 @@ export interface ApiAgentAgent extends Schema.CollectionType {
       'manyToOne',
       'api::departement.departement'
     >;
+    telephone: Attribute.String;
+    sexe: Attribute.Enumeration<['masculin', 'feminin']>;
+    etat_civil: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

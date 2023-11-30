@@ -712,6 +712,11 @@ export interface ApiAgentAgent extends Schema.CollectionType {
     date_naissance: Attribute.Date;
     lieu_naissance: Attribute.String;
     Nationalite: Attribute.String;
+    departement: Attribute.Relation<
+      'api::agent.agent',
+      'manyToOne',
+      'api::departement.departement'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -762,6 +767,79 @@ export interface ApiCongeConge extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::conge.conge',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContratContrat extends Schema.CollectionType {
+  collectionName: 'contrats';
+  info: {
+    singularName: 'contrat';
+    pluralName: 'contrats';
+    displayName: 'contrat';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    entreprise: Attribute.String;
+    type_contrat: Attribute.String;
+    reference_dossier: Attribute.String;
+    date_signature: Attribute.Date;
+    date_fin: Attribute.Date;
+    observation: Attribute.RichText;
+    email: Attribute.Email;
+    telephone: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contrat.contrat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contrat.contrat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDepartementDepartement extends Schema.CollectionType {
+  collectionName: 'departements';
+  info: {
+    singularName: 'departement';
+    pluralName: 'departements';
+    displayName: 'departement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    libelle: Attribute.String;
+    agents: Attribute.Relation<
+      'api::departement.departement',
+      'oneToMany',
+      'api::agent.agent'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::departement.departement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::departement.departement',
       'oneToOne',
       'admin::user'
     > &
@@ -825,6 +903,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::agent.agent': ApiAgentAgent;
       'api::conge.conge': ApiCongeConge;
+      'api::contrat.contrat': ApiContratContrat;
+      'api::departement.departement': ApiDepartementDepartement;
       'api::planning-conge.planning-conge': ApiPlanningCongePlanningConge;
     }
   }

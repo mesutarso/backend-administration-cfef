@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departements",
+  "info": {
+    "singularName": "departement",
+    "pluralName": "departements",
+    "displayName": "departement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelle": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::agent.agent",
+      "mappedBy": "departement"
+    }
+  }
+}

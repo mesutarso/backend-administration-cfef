@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contrats",
+  "info": {
+    "singularName": "contrat",
+    "pluralName": "contrats",
+    "displayName": "contrat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "entreprise": {
+      "type": "string"
+    },
+    "type_contrat": {
+      "type": "string"
+    },
+    "reference_dossier": {
+      "type": "string"
+    },
+    "date_signature": {
+      "type": "date"
+    },
+    "date_fin": {
+      "type": "date"
+    },
+    "observation": {
+      "type": "richtext"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telephone": {
+      "type": "string"
+    }
+  }
+}

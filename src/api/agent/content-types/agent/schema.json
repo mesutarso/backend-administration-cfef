@@ -62,6 +62,12 @@
     },
     "Nationalite": {
       "type": "string"
+    },
+    "departement": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::departement.departement",
+      "inversedBy": "agents"
     }
   }
 }

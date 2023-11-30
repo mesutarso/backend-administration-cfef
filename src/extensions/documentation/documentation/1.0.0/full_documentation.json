@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-30T00:34:55.836Z"
+    "x-generation-date": "2023-11-30T09:46:15.206Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -149,7 +149,7 @@
                 "type": "string",
                 "format": "date"
               },
-              "Adresse": {
+              "adresse": {
                 "type": "string"
               },
               "email": {
@@ -163,7 +163,7 @@
               "lieu_naissance": {
                 "type": "string"
               },
-              "Nationalite": {
+              "nationalite": {
                 "type": "string"
               },
               "departement": {
@@ -681,7 +681,7 @@
                                       "type": "string",
                                       "format": "date"
                                     },
-                                    "Adresse": {
+                                    "adresse": {
                                       "type": "string"
                                     },
                                     "email": {
@@ -695,7 +695,7 @@
                                     "lieu_naissance": {
                                       "type": "string"
                                     },
-                                    "Nationalite": {
+                                    "nationalite": {
                                       "type": "string"
                                     },
                                     "departement": {
@@ -921,7 +921,7 @@
             "type": "string",
             "format": "date"
           },
-          "Adresse": {
+          "adresse": {
             "type": "string"
           },
           "email": {
@@ -935,7 +935,7 @@
           "lieu_naissance": {
             "type": "string"
           },
-          "Nationalite": {
+          "nationalite": {
             "type": "string"
           },
           "departement": {
@@ -1622,7 +1622,7 @@
                         "type": "string",
                         "format": "date"
                       },
-                      "Adresse": {
+                      "adresse": {
                         "type": "string"
                       },
                       "email": {
@@ -1636,7 +1636,7 @@
                       "lieu_naissance": {
                         "type": "string"
                       },
-                      "Nationalite": {
+                      "nationalite": {
                         "type": "string"
                       },
                       "departement": {
@@ -2856,7 +2856,7 @@
                           "type": "string",
                           "format": "date"
                         },
-                        "Adresse": {
+                        "adresse": {
                           "type": "string"
                         },
                         "email": {
@@ -2870,7 +2870,7 @@
                         "lieu_naissance": {
                           "type": "string"
                         },
-                        "Nationalite": {
+                        "nationalite": {
                           "type": "string"
                         },
                         "departement": {
@@ -3660,7 +3660,7 @@
                         "type": "string",
                         "format": "date"
                       },
-                      "Adresse": {
+                      "adresse": {
                         "type": "string"
                       },
                       "email": {
@@ -3674,7 +3674,7 @@
                       "lieu_naissance": {
                         "type": "string"
                       },
-                      "Nationalite": {
+                      "nationalite": {
                         "type": "string"
                       },
                       "departement": {

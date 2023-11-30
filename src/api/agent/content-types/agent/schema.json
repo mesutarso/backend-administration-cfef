@@ -48,7 +48,7 @@
     "date_fin": {
       "type": "date"
     },
-    "Adresse": {
+    "adresse": {
       "type": "text"
     },
     "email": {
@@ -60,7 +60,7 @@
     "lieu_naissance": {
       "type": "string"
     },
-    "Nationalite": {
+    "nationalite": {
       "type": "string"
     },
     "departement": {

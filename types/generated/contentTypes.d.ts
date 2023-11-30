@@ -707,11 +707,11 @@ export interface ApiAgentAgent extends Schema.CollectionType {
     >;
     date_signature: Attribute.Date;
     date_fin: Attribute.Date;
-    Adresse: Attribute.Text;
+    adresse: Attribute.Text;
     email: Attribute.Email;
     date_naissance: Attribute.Date;
     lieu_naissance: Attribute.String;
-    Nationalite: Attribute.String;
+    nationalite: Attribute.String;
     departement: Attribute.Relation<
       'api::agent.agent',
       'manyToOne',

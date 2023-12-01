@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bailleurs",
+  "info": {
+    "singularName": "bailleur",
+    "pluralName": "bailleurs",
+    "displayName": "bailleur"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "acronyme": {
+      "type": "string"
+    },
+    "projets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::projet.projet",
+      "mappedBy": "bailleur"
+    }
+  }
+}

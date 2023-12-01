@@ -35,6 +35,12 @@
     },
     "telephone": {
       "type": "string"
+    },
+    "projet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::projet.projet",
+      "inversedBy": "contrats"
     }
   }
 }

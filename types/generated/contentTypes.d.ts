@@ -738,6 +738,42 @@ export interface ApiAgentAgent extends Schema.CollectionType {
   };
 }
 
+export interface ApiBailleurBailleur extends Schema.CollectionType {
+  collectionName: 'bailleurs';
+  info: {
+    singularName: 'bailleur';
+    pluralName: 'bailleurs';
+    displayName: 'bailleur';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    acronyme: Attribute.String;
+    projets: Attribute.Relation<
+      'api::bailleur.bailleur',
+      'oneToMany',
+      'api::projet.projet'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bailleur.bailleur',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bailleur.bailleur',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCongeConge extends Schema.CollectionType {
   collectionName: 'conges';
   info: {
@@ -797,6 +833,11 @@ export interface ApiContratContrat extends Schema.CollectionType {
     observation: Attribute.RichText;
     email: Attribute.Email;
     telephone: Attribute.String;
+    projet: Attribute.Relation<
+      'api::contrat.contrat',
+      'manyToOne',
+      'api::projet.projet'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -888,6 +929,48 @@ export interface ApiPlanningCongePlanningConge extends Schema.CollectionType {
   };
 }
 
+export interface ApiProjetProjet extends Schema.CollectionType {
+  collectionName: 'projets';
+  info: {
+    singularName: 'projet';
+    pluralName: 'projets';
+    displayName: 'projet';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    acronyme: Attribute.String;
+    bailleur: Attribute.Relation<
+      'api::projet.projet',
+      'manyToOne',
+      'api::bailleur.bailleur'
+    >;
+    contrats: Attribute.Relation<
+      'api::projet.projet',
+      'oneToMany',
+      'api::contrat.contrat'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::projet.projet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::projet.projet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -905,10 +988,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::agent.agent': ApiAgentAgent;
+      'api::bailleur.bailleur': ApiBailleurBailleur;
       'api::conge.conge': ApiCongeConge;
       'api::contrat.contrat': ApiContratContrat;
       'api::departement.departement': ApiDepartementDepartement;
       'api::planning-conge.planning-conge': ApiPlanningCongePlanningConge;
+      'api::projet.projet': ApiProjetProjet;
     }
   }
 }
